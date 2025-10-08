@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math & Word Tricks</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; text-align: center; margin: 0; }
+        header { background: #0078D7; color: white; padding: 20px 0; }
+        main { padding: 20px; }
+        button { background: #0078D7; color: white; border: none; padding: 10px 20px; margin: 10px; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+        button:hover { background: #005fa3; }
+        input { padding: 10px; width: 150px; border-radius: 5px; border: 1px solid #ccc; margin: 5px; }
+        pre { background: white; border-radius: 10px; padding: 15px; width: 70%; margin: 20px auto; text-align: left; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+        footer { margin-top: 40px; font-size: 0.9rem; color: #555; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Math & Word Tricks 🎯</h1>
+        <p>Discover fun number and word patterns — and try Kaprekar’s 6174 routine!</p>
+    </header>
+
+    <main>
+        <!-- Trick buttons -->
+        <form method="POST">
+            {% csrf_token %}
+            <button name="math">Show Math Trick</button>
+            <button name="word">Show Word Trick</button>
+        </form>
+
+        {% if trick %}
+            <pre>{{ trick }}</pre>
+        {% endif %}
+
+        <!-- Kaprekar section -->
+        <section id="kaprekar">
+            <h2>Kaprekar’s Routine (6174)</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="number" name="number" placeholder="Enter 4-digit number" required>
+                <button name="kaprekar">Run Kaprekar</button>
+            </form>
+
+            {% if kaprekar_result %}
+                <pre>{{ kaprekar_result }}</pre>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Emmanuel Osas © 2025</p>
+    </footer>
+</body>
+</html>
