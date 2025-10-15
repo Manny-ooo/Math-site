@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wp)i_q1)x@7$pfvcnw&94v6)^1jss4=x0xu*m(^-(3n@op4j-h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['math-site-1leq.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mathsite.onrender.com']
 
 
 # Application definition
